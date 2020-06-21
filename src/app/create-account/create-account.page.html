@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome de usuário</ion-label>
+    <ion-input  [(ngModel)]="accountName" maxlength="32" pattern="[a-z_0-9]{1,32}" required="true" 
+    placeholder="Apenas letras minúsculas, underline (_) e números"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">PIN</ion-label>
+    <ion-input inputmode="numeric" placeholder="4 dígitos" type="number" [(ngModel)]="pin" required="true"></ion-input>
+  </ion-item>
+  <ion-button color="primary" expand="block" size="large" (click)="createAccount()">Criar conta
+  </ion-button>
+</ion-content>

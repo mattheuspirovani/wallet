@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Criar Coin</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Precisão</ion-label>
+    <ion-input inputmode="numeric" max="99" placeholder="Zeros depois da vírgula" type="number" value="2"></ion-input>    
+  </ion-item>
+  <ion-button color="primary" expand="block" size="large" (click)="walletService.createWallet()">Criar na blockchain</ion-button>
+</ion-content>

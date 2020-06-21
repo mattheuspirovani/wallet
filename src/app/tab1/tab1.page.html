@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blyster
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
+    <ion-fab-button routerLink="/asset">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h2>Coins</h2>
+  <ion-list>
+    <ion-item button detail *ngFor="let asset of walletService.assets; index as position" lines="full">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="primary" >
+          <h2>{{asset.name}}</h2>
+        </ion-text>
+        <h3>Qtd.: {{asset.amount}}</h3>
+      </ion-label>      
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)">Enviar</ion-item-option>
+      </ion-item-options>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="walletService.assets.length == 0">
+    <ion-card-header>
+      <ion-card-title>Sua carteira está vazia! :|</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      São 2 maneiras de se conseguir coins (moedas virtuais) em nossa Blockchain:
+      <ul>
+        <li>Criando a sua própria. Como um bitcoin, só que só seu! ;)</li>
+        <li>Ganhando como recompensa, por compras ou promoções, em estabelecimentos comerciais participantes.</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

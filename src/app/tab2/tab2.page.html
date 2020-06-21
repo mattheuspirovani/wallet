@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Transação
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Coin</ion-label>
+    <ion-select placeholder="Selecione coin" cancelText="Fechar" interface="action-sheet">
+      <ion-select-option value="{{asset.name}}"  *ngFor="let asset of walletService.assets; index as position">{{asset.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="block" (click)="walletService.createWallet()">Enviar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="success" expand="block" (click)="walletService.createWallet()">Receber</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="ion-text-center">
+    
+    
+  </div>
+  <div class="ion-padding-start ion-padding-end">
+    <h3>Últimas transações</h3>
+  </div>
+  
+</ion-content>
